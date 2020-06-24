@@ -1,0 +1,139 @@
+.mat-toolbar{
+    width: 100%;
+    background-color: #086972;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.initial-import-div {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial-import-button {
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #2fc4b2;
+    color: white;
+    height: max-content;
+}
+
+.initial-import-button-span {
+    font-size: x-large;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.mat-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-cell {
+    padding: 8px 8px 8px 0;
+}
+
+.order-table-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 50px 20px 50px;
+}
+
+.mat-header-row {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.mat-header-cell {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding-left: 5%;
+}
+
+.mat-header-row {
+    padding: 20px;
+    background-color: #2fc4b2;
+}
+
+.mat-cell {
+    font-weight: bold;
+}
+
+.search-bar{
+    width: 80%;
+    margin: 50px 50px 0px 50px;
+    border-radius: 20px;
+}
+
+.paginator-div {
+    margin: 0px 50px 0px 0px;
+    border-radius: 10px;
+    padding: 20px;
+    width: max-content;
+    height: max-content;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+.paginator-div:hover {
+    cursor: move;
+}
+
+.date-filter {
+    margin: 50px 50px 0px 0px;
+    width: 60%;
+}
+
+.combined-search-toggle {
+    margin: 70px 20px 0px 0px;
+}
+
+.import-again-button-div {
+    margin: 30px 0px 0px 50px;
+    display: flex;
+    align-items: center;
+}
+
+.import-again-button {
+    border-radius: 30px;
+    height: max-content;
+    background-color: #2fc4b2;
+    color: white;
+}
+
+.clear-data-button {
+    margin-left: 20px;
+    border-radius: 30px;
+    height: max-content;
+    color: #f96d80;
+}
+
+mat-paginator {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke:  #2fc4b2 !important;
+}
+
+.no-results-found-heading {
+    font-weight: bold;
+    padding: 5px 20px 5px 20px;
+    background-color: #086972;
+    color: white;
+    border-radius: 5px;
+    font-size: x-large;
+}
