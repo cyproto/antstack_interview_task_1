@@ -51,9 +51,6 @@ export class DashboardComponent implements OnInit {
       let orderDataObj = fileReaderObj.result;
       let orderArray = (<string>orderDataObj).split(/\r\n|\n/);
       this.orderTitleArray = (<string>orderArray[0]).split(',');
-      console.log(orderArray);
-      console.log(this.orderTitleArray);
-      console.log(this.orderTitleArray.length);
       this.prepareOrderDataForTable(orderArray);
     }
     this.csvUploadInput.nativeElement.value = '';
@@ -62,7 +59,6 @@ export class DashboardComponent implements OnInit {
   prepareOrderDataForTable(orderDataArray) {
     for (let indexInt = 1; indexInt < orderDataArray.length; indexInt++) {
       let orderRowArray = (<string>orderDataArray[indexInt]).split(',');
-      console.log(orderRowArray);
       let orderRowObj = new OrderDataColumns();
       orderRowObj.orderId = parseInt(orderRowArray[0].trim());
       orderRowObj.customerId = parseInt(orderRowArray[1].trim());
@@ -81,11 +77,8 @@ export class DashboardComponent implements OnInit {
 
   onSearchChange() {
     const filterValue = this.searchBarInput.toLowerCase();
-    console.log(this.selectedDateInput)
     if (this.selectedDateInput != null && this.isCombinedSearchEnabled) {
       let formattedSelectedDate = new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
-      console.log();
-      console.log(formattedSelectedDate);
       this.searchOrdersBySearchInput(filterValue, this.searchOrdersByDate(formattedSelectedDate, this.orderDataArray))
     } else {
       this.searchOrdersBySearchInput(filterValue, this.orderDataArray)
@@ -94,7 +87,6 @@ export class DashboardComponent implements OnInit {
 
   onDateChange() {
     let formattedSelectedDate = this.selectedDateInput == '' ? '' : new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
-    console.log(formattedSelectedDate);
     const filterValue = formattedSelectedDate.toLowerCase();
     if (this.searchBarInput.length > 0 && this.isCombinedSearchEnabled) {
       this.searchOrdersByDate(filterValue, this.searchOrdersBySearchInput(this.searchBarInput, this.orderDataArray))
@@ -113,7 +105,6 @@ export class DashboardComponent implements OnInit {
   }
 
   searchOrdersByDate(filterValue, orderDataArray) {
-    console.log(filterValue);
     return this.filteredOrderDataArray.data = orderDataArray.filter(order =>
       order.orderDate.toLowerCase().includes(filterValue)
     );
