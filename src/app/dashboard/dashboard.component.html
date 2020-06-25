@@ -19,18 +19,24 @@
     <div fxFlex="50">
         <mat-form-field color="primary" class="search-bar" appearance="outline">
             <mat-label style="font-size: larger;">Search</mat-label>
+            <button matSuffix mat-icon-button (click)="clearSearchBarInput()">
+                <mat-icon>close</mat-icon>
+            </button>
             <input matInput #searchBar [(ngModel)]="searchBarInput" class="form-control" type="search"
                 (input)="onSearchChange()" autocomplete="off"
                 placeholder="Search by Order Id, Customer Id, Delivery Pincode, Items">
         </mat-form-field>
     </div>
     <div fxFlex="50" fxLayoutAlign="flex-end">
-        <mat-slide-toggle #combinedSearchToggle class="combined-search-toggle" (click)="onCombinedSearchToggleChange()">
+        <mat-slide-toggle color="primary" #combinedSearchToggle class="combined-search-toggle" (click)="onCombinedSearchToggleChange()">
             Enable combined search</mat-slide-toggle>
         <mat-form-field class="date-filter" appearance="outline">
+            <button matPrefix mat-icon-button (click)="clearDatePickerInput()">
+                <mat-icon >close</mat-icon>
+            </button>
             <mat-label>Choose filter date</mat-label>
             <input #selectedDate matInput [(ngModel)]="selectedDateInput" [matDatepicker]="filterDate"
-                (dateInput)="onDateChange()">
+                (dateInput)="onDateChange()" style="margin-left: 10px;">
             <mat-datepicker-toggle matSuffix [for]="filterDate"></mat-datepicker-toggle>
             <mat-datepicker #filterDate></mat-datepicker>
         </mat-form-field>

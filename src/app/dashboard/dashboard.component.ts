@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onDateChange() {
-    let formattedSelectedDate = new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
+    let formattedSelectedDate = this.selectedDateInput == '' ? '' : new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
     console.log(formattedSelectedDate);
     const filterValue = formattedSelectedDate.toLowerCase();
     if (this.searchBarInput.length > 0 && this.isCombinedSearchEnabled) {
@@ -152,7 +152,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onImportNewCsvClick($event) {
-    if (this.orderDataArray.length !=0 && !confirm('Merge into existing data?')) {
+    if (this.orderDataArray.length != 0 && !confirm('Merge into existing data?')) {
       this.orderDataArray = [];
     }
     this.onUpload($event);
@@ -166,4 +166,15 @@ export class DashboardComponent implements OnInit {
       return;
     }
   }
+
+  clearSearchBarInput() {
+    this.searchBarInput = '';
+    this.onSearchChange();
+  }
+
+  clearDatePickerInput() {
+    this.selectedDateInput = '';
+    this.onDateChange();
+  }
+  
 }
