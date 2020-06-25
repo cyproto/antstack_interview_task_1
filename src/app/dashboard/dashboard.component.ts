@@ -78,20 +78,18 @@ export class DashboardComponent implements OnInit {
   onSearchChange() {
     const filterValue = this.searchBarInput.toLowerCase();
     if (this.selectedDateInput != null && this.isCombinedSearchEnabled) {
-      let formattedSelectedDate = new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
-      this.searchOrdersBySearchInput(filterValue, this.searchOrdersByDate(formattedSelectedDate, this.orderDataArray))
+      this.searchOrdersBySearchInput(filterValue, this.searchOrdersByDate(this.getFormattedDate().toLowerCase(), this.orderDataArray));
     } else {
-      this.searchOrdersBySearchInput(filterValue, this.orderDataArray)
+      this.searchOrdersBySearchInput(filterValue, this.orderDataArray);
     }
   }
 
   onDateChange() {
-    let formattedSelectedDate = this.selectedDateInput == '' ? '' : new DatePipe('en-GB').transform(this.selectedDateInput, 'dd/MM/yyyy');
-    const filterValue = formattedSelectedDate.toLowerCase();
+    const filterValue = this.getFormattedDate().toLowerCase();
     if (this.searchBarInput.length > 0 && this.isCombinedSearchEnabled) {
-      this.searchOrdersByDate(filterValue, this.searchOrdersBySearchInput(this.searchBarInput, this.orderDataArray))
+      this.searchOrdersByDate(filterValue, this.searchOrdersBySearchInput(this.searchBarInput.toLowerCase(), this.orderDataArray));
     } else {
-      this.searchOrdersByDate(filterValue, this.orderDataArray)
+      this.searchOrdersByDate(filterValue, this.orderDataArray);
     }
   }
 
@@ -160,12 +158,16 @@ export class DashboardComponent implements OnInit {
 
   clearSearchBarInput() {
     this.searchBarInput = '';
-    this.onSearchChange();
+    this.searchOrdersByDate(this.getFormattedDate(), this.orderDataArray);
   }
 
   clearDatePickerInput() {
     this.selectedDateInput = '';
-    this.onDateChange();
+    this.searchOrdersBySearchInput(this.searchBarInput, this.orderDataArray);
+  }
+
+  getFormattedDate() {
+    return this.selectedDateInput == '' ? '' : new DatePipe('en-US').transform(this.selectedDateInput, 'dd/MM/yyyy');
   }
   
 }
