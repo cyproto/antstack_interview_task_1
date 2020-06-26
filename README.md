@@ -1,27 +1,37 @@
-# AntstackTask
+# AntStack Interview Task 1
+Task description can be found [here.](https://drive.google.com/file/d/1u3VFQhnTdiMRHyc5LRTZugRy5dpNUv-8/view?usp=sharing "here.")
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
-## Development server
+## Live demo: 
+[AntStack Task 1.](https://antstack-task-1.firebaseapp.com/ "AntStack Task 1.")
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Running the app:
+* **Clone the app:**
 
-## Code scaffolding
+```bash
+git clone https://github.com/cyproto/antstack_interview_task_1.git
+```
+* **Open cloned directory:**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+cd antstack_interview_task_1
+```
+* **Intall required packages:**
 
-## Build
+```bash
+npm install
+```
+* **Run app**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+ng serve
+```
 
-## Running unit tests
+**Note:** If you have any issues while installing packages delete `package-lock.json` and retry.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Screenshots:
+| <img src="https://i.imgur.com/GOrFDUi.png"> | <img src="https://i.imgur.com/FWZCIvu.png"> | 
+| ------------ | ------------ |
+| <img src="https://i.imgur.com/T9GTpiS.png"> | <img src="https://i.imgur.com/2b2c7MJ.png"> |
+| <img src="https://i.imgur.com/5RBUPn7.png"> | <img src="https://i.imgur.com/B58pqEu.png"> |
+| <img src="https://i.imgur.com/kheIds9.png"> |
